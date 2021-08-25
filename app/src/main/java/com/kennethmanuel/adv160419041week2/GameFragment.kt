@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_game.*
-import kotlinx.android.synthetic.main.fragment_main.*
 
 class GameFragment : Fragment() {
     override fun onCreateView(
@@ -22,8 +21,8 @@ class GameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if(arguments!=null) {
-            val playerName = GameFragmentArgs.fromBundle((requireArguments())).playerName
-            txtTurn.text = "$playerName's Turn"
+            val playerScore = GameFragmentArgs.fromBundle((requireArguments())).score
+            txtYourScore.text = "Your score is $playerScore"
         }
 
         btnBack.setOnClickListener {
